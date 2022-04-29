@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+body {
+	font-family: 'roboto', sans-serif;
+	background-image: url("../images/gardening-planting.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	text-align: center;
+	padding: 300px 200px 300px 200px;
+
+}
+
+.enter-head {
+	text-shadow: 3px 3px color(display-p3 0.2 0.2 0.2);
+	}
+	
+.submit-button {
+	background-color: rgb(163, 216, 98);
+	width: 10%;
+	padding: 10px 5px;
+	margin: 5px 0;
+	cursor: pointer;
+		
+	}
+	
+input {
+	 width: 20%;
+	 padding: 10px 20px;
+	 margin: 10px 0;
+	 box-sizing: border-box;
+	}
+	
+.navigation {
+	font-family: Helvetica;
+		  font-size: 22px;
+		  text-align: center;
+		  padding: 10px 0px 0px 0px;;
+		  border: none;
+		  width: 120%;
+		  margin-bottom: 180px;
+		  position: absolute;
+			width: 120%;
+			top: 0;
+			left: 0;
+		}
+		
+		.navigation a {
+		  color: white;
+		  display: block;
+		margin-bottom: 100px;
+		text-decoration: none;
+		
+		
+	
+		}
+		
+		.navigation li {
+		  display: inline;
+		  width: 20%;
+		  float: left;
+		  padding: 10px;
+		}
+		
+		a {
+			color: white;
+			display: block;
+			text-decoration: none;
+			
+		}
+	a:hover {
+		color: color(display-p3 0.926 0.56 0.252);
+	}
+		
+	li {
+			width: 20%;
+			float: left;
+			padding: 10px;
+			list-style: none;
+			text-align: center;
+			display:block;
+			
+		}

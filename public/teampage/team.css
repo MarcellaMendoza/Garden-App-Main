@@ -1,0 +1,48 @@
+.columns {
+  position: relative; 
+  padding: 20px;
+  
+}
+
+.col {
+  padding: 30px;
+  background: whitesmoke;
+  border: 2px solid black;
+  text-align: center; 
+
+}
+
+.section {
+  background: color(display-p3 0.204 0.286 0.125);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-family: 'PT Sans', sans-serif;
+  color: #383838;
+  text: center;  
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: #000000; 
+  background: color(display-p3 0.2 0.2 0.2); 
+  font-size: 21px;
+}
+
+.title {
+	background: #ffff;
+	border: 2px solid black;
+}
+
+.gridWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40vh;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+

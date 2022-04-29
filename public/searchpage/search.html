@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Side Navigation Bar</title>
+  <link rel="stylesheet" href="search.css">
+ <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="Plants">
+        <h2>Plants</h2>
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            
+        </ul> 
+    
+    </div>
+    <div class="main_content">
+        <div class="header">
+          
+          <div id="container">
+              <div id="search">
+                  <label for="searchInput">Search Garden</label>
+                  <input id="searchInput" type="text" placeholder="Plant name">
+                  <button onclick="getPlant()">go</button>
+              </div>   
+          </div>   
+        </div> 
+         
+        <div class="info">
+          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis </div>
+          <div id="result">
+          
+          </div>
+      </div>
+    </div>
+</div>
+<script>
+      async function getPlant() {
+        const url = "/api?plantName=" + document.getElementById('searchInput').value 
+        const rawRes = await fetch(url)
+        const json = await rawRes.json()
+        document.getElementById('result').innerHTML = json.name + " are best grown in " + json.soil
+        
+      }
+      
+    </script>
+
+</body>
+</html>
