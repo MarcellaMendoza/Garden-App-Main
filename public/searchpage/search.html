@@ -22,18 +22,27 @@
           
           <div id="container">
               <div id="search">
-                  <label for="searchInput">Search Garden</label>
-                  <input id="searchInput" type="text" placeholder="Plant name">
-                  <button onclick="getPlant()">go</button>
+                  <label for="searchInput">Look for a plant! </label>
+                  <input id="searchInput" type="text" placeholder="Plant Name">
+                  <button onclick="getPlant()">SEARCH</button>
               </div>   
           </div>   
         </div> 
          
         <div class="info">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis </div>
-          <div id="result">
-          
-          </div>
+          <div> </div>
+          <div id="welcome"></div>
+          <img id="plantPic"></img>
+          <div id="soil"></div>
+          <div id="sunlight"></div>
+          <div id="watering"></div>
+          <div id="sow"></div>
+          <div id="feeding"></div>
+          <div id="harvesting"></div>
+          <div id="pest"></div>
+          <div id="frost"></div>
+          <div id="tip"></div>
+          <div id="result"></div>
       </div>
     </div>
 </div>
@@ -42,7 +51,19 @@
         const url = "/api?plantName=" + document.getElementById('searchInput').value 
         const rawRes = await fetch(url)
         const json = await rawRes.json()
-        document.getElementById('result').innerHTML = json.name + " are best grown in " + json.soil
+        document.getElementById('welcome').innerHTML = json.welcome
+
+        document.getElementById('plantPic').src = json.url
+        
+        document.getElementById('soil').innerHTML = "Soil: " + json.soil
+        document.getElementById('sunlight').innerHTML = "Sunlight: " + json.sunlight
+        document.getElementById('watering').innerHTML = "Watering: " + json.watering
+        document.getElementById('sow').innerHTML = "Sowing: " + json.sow
+        document.getElementById('feeding').innerHTML = "Feeding: " + json.feeding
+        document.getElementById('pest').innerHTML = "Pests: " + json.pest
+        document.getElementById('frost').innerHTML = "Frost: " + json.frost
+        document.getElementById('tip').innerHTML = "Garden tip: " + json.tip
+        document.getElementById('harvesting').innerHTML = "Harvesting: " + json.harvesting
         
       }
       

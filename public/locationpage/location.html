@@ -13,37 +13,62 @@
 			  <a href="/">Home</a> 
 			</li>
 			<li>
-			  <a href="/team">Team</a> 
-			</li>
-			<li>
 			  <a href="/search">Search</a>
 			</li>
 			 <li>
 			  <a href="/location">Location</a>
 			</li>
+      <li>
+			  <a href="/facts">Facts</a>
+			</li>
+      <li>
+			  <a href="/team">Team</a> 
+			</li>
 		  </nav>
 		</div>
 		
 		<div class="location-page">
-			<section>
-			<h1 class="enter-head">Enter the zone of your location below to find out what you can <strong>PLANT</strong> today!</h1>
-			<form>
-			<input id="inputElem" type="text" placeholder="ZONE">
-			<button class="submit-button">SUBMIT</button>
-			</form>
-			<p id="result"></p>
-			</section>
+<!-- 			<section class="location-sec"> -->
+      <h2>Let's get growing!</h2>
+        <img src="../images/zonesmap.png">        
+			<h1 class="enter-head">Enter the zone of your location below to find out what you can plant!</h1>
+	
+			<input id="zoneElem" type="text" placeholder="EXAMPLE: ZONE 9">
+			<button class="submit-button" onclick="getZone()">SUBMIT</button>
+			<div id="results"></div>
+<!-- 			</section> -->
 		</div>
-		<!-- <script src="server.js"> -->
 			<script>
-			// async function getPlants() {
-			// 	const url = "/api?plantName=" + document.getElementById('inputElem').value 
-			// 	const rawRes = await fetch(url)
-			// 	const json = await rawRes.json()
-			// 	document.getElementById('result').innerHTML = json.name
-			// 	
-			// }
+
+        
+			async function getZone() {
+        try {
+          const url = "/api/zone?plantZone=" + document.getElementById('zoneElem').value 
+				const rawRes = await fetch(url)
+				const json = await rawRes.json()
+        console.log("Zone info")
+				
+        for (let i=0; i < json.length; i++) {
+          document.getElementById('results').innerHTML += json[i].name + " "
+        }
+        } catch(err) {
+          console.log(err)
+        }
+				
+				
+			}
 			
 		</script>
 	</body>
 </html>
+
+
+
+<!--    async function getPlant() {
+        const url = "/api?plantName=" + document.getElementById('searchInput').value 
+        const rawRes = await fetch(url)
+        const json = await rawRes.json()
+        document.getElementById('welcome').innerHTML = json.welcome
+        document.getElementById('result').innerHTML = " If you are thinking about planting " + json.name + ", they are best grown in " + json.soil + ". This crop requires " + json.sunlight + " along with " + json.watering + " in order to get a good and plentiful yield." + " The care for this crop is " + json.care + ". The best location for " + json.name + " to thrive and grow is " + json.location + ". These types of crops " + json.frost + " The feeding for " + json.name + " requires " + json.feeding
+        
+      } -->

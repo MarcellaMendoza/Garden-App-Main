@@ -32,18 +32,3 @@ function hideAllSlides() {
 }
 
 
-// async function asyncAPICALL() {
-//   try {
-//      GET /v1/plants
-//      Host: https://api.floracodex.com/
-    
-//      Authorization: Bearer 6268d3cf9eb9d5c1fd3ad1c4
-// // //         let res = await fetch("https://api.floracodex.com/")
-// // //     let jsonObj = await res.json()
-// // //     console.log(jsonObj)
-// // //   }catch (err) {
-// // //     console.log(err)
-//   }
-// }
-
-// asyncAPICALL()

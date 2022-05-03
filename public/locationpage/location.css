@@ -8,8 +8,12 @@ body {
 	background-size: cover;
 	color: white;
 	text-align: center;
-	padding: 300px 200px 300px 200px;
+	padding: 80px 200px 300px 200px;
 
+}
+
+h2 {
+  font-size: 50px;
 }
 
 .enter-head {
@@ -34,22 +38,23 @@ input {
 	
 .navigation {
 	font-family: Helvetica;
-		  font-size: 22px;
+		  font-size: 24px;
 		  text-align: center;
 		  padding: 10px 0px 0px 0px;;
 		  border: none;
 		  width: 120%;
-		  margin-bottom: 180px;
+		  margin-bottom: 0px;
 		  position: absolute;
 			width: 120%;
 			top: 0;
 			left: 0;
+  bottom: 0;
 		}
 		
 		.navigation a {
 		  color: white;
 		  display: block;
-		margin-bottom: 100px;
+		margin-bottom: 0px;
 		text-decoration: none;
 		
 		
@@ -58,7 +63,7 @@ input {
 		
 		.navigation li {
 		  display: inline;
-		  width: 20%;
+		  width: 15%;
 		  float: left;
 		  padding: 10px;
 		}
@@ -82,3 +87,11 @@ input {
 			display:block;
 			
 		}
+
+.location-page {
+   margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+}

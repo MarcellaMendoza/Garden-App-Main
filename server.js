@@ -15,7 +15,7 @@ app.use(express.static('public/locationpage'))
 app.use(express.static('public/searchpage'))
 app.use(express.static('public/teampage'))
 app.use(express.static('public/images'))
-
+app.use(express.static('public/factspage'))
 
 
 app.get('/', (req, res) => {
@@ -34,6 +34,9 @@ app.get('/location', (req, res) => {
 		res.sendFile(__dirname + "/public/locationpage/location.html")
 		})
 
+app.get('/facts', (req, res) => {
+  res.sendFile(__dirname  + "/public/factspage/facts.html")
+})
 
 app.get('/api', (req, res) => {
 	console.log("Reached the backend")
@@ -44,7 +47,7 @@ app.get('/api', (req, res) => {
 			const collection = client.db('garden_db').collection('plants')
 			// const cursorArr = await collection.find({name: nameInput}).toArray()
 			const doc = await collection.findOne({name: nameInput})
-			console.log(doc)
+			// console.log(doc)
 			res.send(doc)
 		}
 		catch(err) {
@@ -55,6 +58,39 @@ app.get('/api', (req, res) => {
 	}
 	findPlant()
 	})
+
+
+
+
+
+app.get('/api/zone', (req, res) => {
+	console.log("Reached the backend")
+	const zoneInput = req.query.plantZone
+	async function findZone() {
+		try {
+			await client.connect()
+			const collection = client.db('garden_db').collection('plants')
+			// const cursorArr = await collection.find({name: nameInput}).toArray()
+			const docs = await collection.find({location: zoneInput}).toArray()
+			console.log("Doc:", docs)
+			res.send(docs)
+		}
+		catch(err) {
+			console.log(err)
+			res.sendStatus(400)
+		}
+
+	}
+	findZone()
+	})
+
+
+
+
+
+
+
+
 
 
 
