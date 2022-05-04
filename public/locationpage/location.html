@@ -3,41 +3,42 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Garden Plannting</title>
+		<title>Location</title>
 		<link href="location.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<div class="navigation">
-		  <nav>
-			<li>
+		
+
 			  <a href="/">Home</a> 
-			</li>
-			<li>
+			
 			  <a href="/search">Search</a>
-			</li>
-			 <li>
+			
 			  <a href="/location">Location</a>
-			</li>
-      <li>
+			
 			  <a href="/facts">Facts</a>
-			</li>
-      <li>
+			
 			  <a href="/team">Team</a> 
-			</li>
-		  </nav>
+		
+	
 		</div>
 		
 		<div class="location-page">
-<!-- 			<section class="location-sec"> -->
       <h2>Let's get growing!</h2>
         <img src="../images/zonesmap.png">        
-			<h1 class="enter-head">Enter the zone of your location below to find out what you can plant!</h1>
+			<h1 class="enter-head">Enter the zone of your location below to find out what crops grow best in your area and then click the images to search more about it!</h1>
 	
-			<input id="zoneElem" type="text" placeholder="EXAMPLE: ZONE 9">
+			<input id="zoneElem" placeholder="zone 9">
 			<button class="submit-button" onclick="getZone()">SUBMIT</button>
-			<div id="results"></div>
-<!-- 			</section> -->
-		</div>
+			<a href="/search"><div id="results"></div></a>
+    
+    </div>
+
+
+
+
+
+    
 			<script>
 
         
@@ -47,9 +48,10 @@
 				const rawRes = await fetch(url)
 				const json = await rawRes.json()
         console.log("Zone info")
-				
+				document.getElementById('results').innerHTML = ""
         for (let i=0; i < json.length; i++) {
-          document.getElementById('results').innerHTML += json[i].name + " "
+          document.getElementById('results').innerHTML += `<img src="${json[i].url}">`
+          
         }
         } catch(err) {
           console.log(err)
@@ -62,13 +64,3 @@
 	</body>
 </html>
 
-
-
-<!--    async function getPlant() {
-        const url = "/api?plantName=" + document.getElementById('searchInput').value 
-        const rawRes = await fetch(url)
-        const json = await rawRes.json()
-        document.getElementById('welcome').innerHTML = json.welcome
-        document.getElementById('result').innerHTML = " If you are thinking about planting " + json.name + ", they are best grown in " + json.soil + ". This crop requires " + json.sunlight + " along with " + json.watering + " in order to get a good and plentiful yield." + " The care for this crop is " + json.care + ". The best location for " + json.name + " to thrive and grow is " + json.location + ". These types of crops " + json.frost + " The feeding for " + json.name + " requires " + json.feeding
-        
-      } -->
