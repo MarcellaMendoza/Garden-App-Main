@@ -4,14 +4,16 @@
 		<meta charset="utf-8">
 <!-- 		<meta name="viewport" content="width=device-width"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Sow & Grow</title>
+	
+    <title>Sow & Grow</title>
 		<link href="./home.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	</head>
 	<body>
-		
 		<header>
       <div class='banner'>
 			<div class="navigation">
+          <a href="#" class="toggle-button">
 			  <nav>
 				<li>
 				  <a href="/">Home</a> 
@@ -32,6 +34,7 @@
         
 			<h1 class="name-title">Sow & Grow</h1>
         </div>
+      </div>
 		</header>
 		<section class="section-one">
 			<h1 class="organize-title">Learn how to sow & grow a garden here!</h1>
@@ -60,26 +63,26 @@
 		  </div>
 		  
 		</div>
-		<p class="organize-p">Planning out a garden can be overwhelming, especially if you're a beginner. Don't worry! <strong class="garden-strong">Sow & Grow</strong> is here to help make gardening easy and fun! Scroll down to find out how!</p>
+		<div class="organize-p">Planning out a garden can be overwhelming, especially if you're a beginner. Don't worry! <strong class="garden-strong">Sow & Grow</strong> is here to help make gardening easy and fun! Scroll down to find out how!</div>
 		
 		</section>
 		
 		<section class="section-two">
 			<div class="myGrid">
-		    	<div id="row1col1">
+		    	<div id="row1col1" data-aos="flip-up" data-aos-delay="200">
           <h3 class="row2p">Look For Crops By Location</h3>
-			  <p class="p-tag2">Sow & Grow provides the online tools and information that you need to start planning! Click on the map below to find out what crops grow best in your gardening zone!</p>
+			  <p class="p-tag2">Sow & Grow provides the online tools and information that you need to start planning! Use our location tool to find out what crops grow best in your gardening zone!</p>
   
         <div class="zone-pic">
         <a href="/location"><img src="../images/zonesmap.png"></a>
           </div>
           </div>
-		  	<div id="row1col2"></div>
-		    <div id="row2col1"></div>
-        <div id="row2col2">
+		  	<div id="row1col2" data-aos="flip-up" data-aos-delay="200"></div>
+		    <div id="row2col1" data-aos="flip-up" data-aos-delay="200"></div>
+        <div id="row2col2" data-aos="flip-up" data-aos-delay="200">
 			  
 			  <h3 class="row1p">Gardening Can Be Made Easy</h3>
-			  <p class="p-tag1">One of the many beauties of Sow & Grow is that it requires minimal effort to start so you can learn and enjoy the journey of planning out your garden! Click the search icon below to look for a crop you'd like to learn more about!</p>
+			  <p class="p-tag1">One of the many beauties of Sow & Grow is that it requires minimal effort to start so you can learn and enjoy the journey of planning out your garden! Use our search bar to look for a crop you'd like to learn more about!</p>
 
     <div class="zone-pic">
         <a href="/search"><img src="../images/searchicon.png"></a>
@@ -123,5 +126,9 @@
 		
 	</section>
 	<script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	  <script>
+		AOS.init();
+	  </script>
 	</body>
 </html>

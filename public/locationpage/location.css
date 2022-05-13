@@ -23,30 +23,18 @@ h2 {
 	
 .submit-button {
 	background-color: rgb(163, 216, 98);
-	width: 10%;
-	padding: 10px 10px;
+  height: 5vh;
+	width: 10vw;
+/* 	padding: 10px 10px; */
 	margin: 10px 10px;
 	cursor: pointer;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 2vw;
 		
 	}
 	
-input {
-	 width: 30%;
-	 padding: 10px 10px;
-	 margin: 10px 0;
-  border-radius: 5px;
-}
-
-input,
-input::-webkit-input-placeholder {
-  font-size: 18px;
-  line-height: 1;
-}
 	
 .navigation {
-	font-family: Helvetica;
 	font-size: 24px;
 	text-align: center;
 	padding: 10px 0px 0px 0px;;
@@ -107,11 +95,27 @@ li {
 
 #results img {
   border-radius: 10%;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   justify-content: space-between;
   padding: 7px 7px 7px 7px;
   
 }
 
 
+#name {
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+label {
+  font-size: 30px;
+}
+
+select {
+width: 10%;
+height: 30px;
+font-size: 20px;
+background-color: greenyellow;
+}

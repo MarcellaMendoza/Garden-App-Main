@@ -12,9 +12,9 @@
 
 			  <a href="/">Home</a> 
 			
-			  <a href="/search">Search</a>
-			
 			  <a href="/location">Location</a>
+
+        <a href="/search">Search</a>
 			
 			  <a href="/facts">Facts</a>
 			
@@ -28,30 +28,40 @@
         <img src="../images/zonesmap.png">        
 			<h1 class="enter-head">Enter the zone of your location below to find out what crops grow best in your area and then click the images to search more about it!</h1>
 	
-			<input id="zoneElem" placeholder="zone 9">
-			<button class="submit-button" onclick="getZone()">SUBMIT</button>
+
+        
+  <label for="zones">Choose A Zone: </label>
+  <select name="zones" id="zoneElem">
+    <option value="zone 6">Zone 6</option>
+    <option value="zone 7">Zone 7</option>
+    <option value="zone 8">Zone 8</option>
+    <option value="zone 9">Zone 9</option>
+    <option value="zone 10">Zone 10</option>
+  </select>
+  <br><br>
+  <button class="submit-button" onclick="getZone()">SUBMIT</button>
 			<a href="/search"><div id="results"></div></a>
+          
+
     
     </div>
-
-
-
-
-
-    
-			<script>
+		<script>
 
         
 			async function getZone() {
         try {
           const url = "/api/zone?plantZone=" + document.getElementById('zoneElem').value 
+          console.log(url)
 				const rawRes = await fetch(url)
 				const json = await rawRes.json()
         console.log("Zone info")
 				document.getElementById('results').innerHTML = ""
         for (let i=0; i < json.length; i++) {
-          document.getElementById('results').innerHTML += `<img src="${json[i].url}">`
-          
+          document.getElementById('results').innerHTML += 
+            `<div>
+              <img src="${json[i].url}">
+              <div id="name">${json[i].name}</div>
+            </div>`
         }
         } catch(err) {
           console.log(err)
