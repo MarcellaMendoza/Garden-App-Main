@@ -7,77 +7,79 @@
  <script src="https://kit.fontawesome.com/e331faf965.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<body>
+		<div class="navigation">
+		
 
-<div class="wrapper">
-    <div class="Plants">
-        <h2>Plants</h2>
-        <ul>
-            <li><a href="/"><i class="fa-solid fa-house"></i>Home</a></li>
-            <li><a href="/location"><i class="fa-solid fa-location-crosshairs"></i>Location</a></li>
-            <li><a href="/search"><i class="fa-solid fa-magnifying-glass"></i>Search</a></li>
-            <li><a href="/facts"><i class="fa-solid fa-leaf"></i>Facts</a></li>
-            <li><a href="/team"><i class="fa-solid fa-people-group"></i>Team</a></li>
-        </ul> 
-    
-    </div>
-    <div class="main_content">
-        <div class="header">
-          
-          <div id="container">
-              <div id="search">
-                  <label for="searchInput">Type in a crop to learn more! </label>
-                  <input id="searchInput" type="text" placeholder="EXAMPLE: tomatoes">
-                  <button onclick="getPlant()">SEARCH</button>
-              </div>   
-          </div>   
-        </div> 
-         
-        <div class="info">
-          <div> </div>
-          <div id="welcome"></div>
-          <img id="plantPic"></img>
-          <div id="soil"></div>
-          <div id="sunlight"></div>
-          <div id="watering"></div>
-          <div id="sow"></div>
-          <div id="feeding"></div>
-          <div id="harvesting"></div>
-          <div id="pest"></div>
-          <div id="frost"></div>
-          <div id="tip"></div>
-          <div id="result"></div>
-      </div>
-    </div>
-</div>
-<script>
-      async function getPlant() {
-       try { const url = "/api?plantName=" + document.getElementById('searchInput').value 
-        const rawRes = await fetch(url)
-        const json = await rawRes.json()
-        document.getElementById('result').innerHTML = ""
-        document.getElementById('welcome').innerHTML = json.welcome
+			  <a href="/">Home</a> 
+			
+			  <a href="/location">Location</a>
 
-        document.getElementById('plantPic').src = json.url
-        
-        document.getElementById('soil').innerHTML = "Soil: " + json.soil
-        document.getElementById('sunlight').innerHTML = "Sunlight: " + json.sunlight
-        document.getElementById('watering').innerHTML = "Watering: " + json.watering
-        document.getElementById('sow').innerHTML = "Sowing: " + json.sow
-        document.getElementById('feeding').innerHTML = "Feeding: " + json.feeding
-        document.getElementById('pest').innerHTML = "Pests: " + json.pest
-        document.getElementById('frost').innerHTML = "Frost: " + json.frost
-        document.getElementById('tip').innerHTML = "Garden tip: " + json.tip
-        document.getElementById('harvesting').innerHTML = "Harvesting: " + json.harvesting
-        }
-        catch(err) {
-          console.log('err')
-           // document.getElementById('result').innerHTML = ""
-          document.getElementById('result').innerHTML = "Sorry, that does not exist!"
-          
-        }
-      }
-      
-    </script>
+		    <a href="/search">Search</a>
+			
+			  <a href="/facts">Facts</a>
+			
+			  <a href="/team">Team</a> 
+		
+	
+		</div>
+		
+		<div class="search-page">
+	
+				<div class="main_content">
+					<div class="header">
+					  
+					  <div id="container">
+						  <div id="search">
+							  <label for="searchInput">Type in a crop to learn more! </label>
+							  <input id="searchInput" type="text" placeholder="EXAMPLE: tomatoes">
+							  <button onclick="getPlant()">SEARCH</button>
+						  </div>   
+					  </div>   
+					</div> 
+					 
+					<div class="info">
+			
+			
+			
+			
+					  
+				  </div>
+				</div>
+			</div>
+			<script>
+				  async function getPlant() {
+					const info = document.getElementsByClassName('info')[0]
+					
+				   try { const url = "/api?plantName=" + document.getElementById('searchInput').value 
+					const rawRes = await fetch(url)
+					const json = await rawRes.json()
+					
+					info.innerHTML = `<div id="welcome">${json.welcome}</div>
+					  <img src="${json.url}" id="plantPic"></img>
+					  <div id="soil">Soil: ${json.soil}</div>
+					  <div id="sunlight">Sunlight: ${json.sunlight}</div>
+					  <div id="watering">Watering: ${json.watering}</div>
+					  <div id="sow">Sowing: ${json.sow}</div>
+					  <div id="feeding">Feeding: ${json.feeding}</div>
+					  <div id="harvesting">Harvesting: ${json.feeding}</div>
+					  <div id="pest">Pests: ${json.pest}</div>
+					  <div id="frost">Frost: ${json.frost}</div>
+					  <div id="tip">Garden tip: ${json.tip}</div>
+					  `
+					}
+					catch(err) {
+					  console.log('err')
+					  info.innerHTML = `<div id="result">Sorry, that does not exist!</div>`
+					  
+					}
+				  }
+				</script>
+	   
+		  
 
-</body>
+	
+	   </div>
+		
+	</body>
 </html>

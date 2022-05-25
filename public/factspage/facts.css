@@ -3,7 +3,7 @@ h1, p {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 3vw;
   text-shadow: 3px 3px color(display-p3 0.2 0.2 0.2);
 }
 
@@ -16,9 +16,7 @@ body {
 }
 
 .navigation {
-  color: white;
-  text-decoration: none;
-	font-size: 25px;
+  	font-size: 4vh;
 	text-align: center;
 	padding: 10px 0px 0px 0px;;
 	border: none;
@@ -33,10 +31,10 @@ body {
 }
 
 .navigation a {
-	color: white;
+  color: white;
 	display: block;
   margin-bottom: 0px;
-	text-decoration: none;
+	text-decoration: none; 
 }
 		
 		
@@ -47,7 +45,8 @@ a {
 }
 
 a:hover {
-	color: color(display-p3 0.926 0.56 0.252);
+	color: orange;
+/* 	color: color(display-p3 0.926 0.56 0.252); */
 }
 	
 
@@ -56,25 +55,35 @@ a:hover {
 	width: 25%;
 	cursor: pointer;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 1vh;
   color: white;
   font-weight: bold;
 /*   border-block-color: black; */
 }
 
+.container{
+    width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .fact-container {
-  width: 50%;
-  padding: 50px 40px 40px 40px;
+/*   padding: 50px 40px 40px 40px; */
+  padding: 5vw;
   border-radius: 7px;
   background-color: green;
   text-align: center;
   opacity: 0.8;
-/*   margin: 21em; */
-  margin: 200px 200px 350px 350px;
+  width: 50%;
+/*   top: 25%;
+  left: 22%;
+  position: absolute; */
 }
 
 #plant-fact {
-  font-size: 30px;
+  font-size: 3vh;
 }
 

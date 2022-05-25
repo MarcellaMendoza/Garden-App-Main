@@ -10,32 +10,47 @@ body {
 	text-align: center;
 	padding: 80px 200px 300px 200px;
   text-shadow: 3px 3px color(display-p3 0.2 0.2 0.2);
-
+min-height: 100vh;
+   background-position: center right;
+   background-attachment: fixed;
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 5.5vh;
 }
 
 .enter-head {
 	text-shadow: 3px 3px color(display-p3 0.2 0.2 0.2);
+  font-size: 3vh;
 	}
 	
 .submit-button {
 	background-color: rgb(163, 216, 98);
-  height: 5vh;
+  height: 5.5vh; 
 	width: 10vw;
 /* 	padding: 10px 10px; */
 	margin: 10px 10px;
 	cursor: pointer;
   border-radius: 5px;
-  font-size: 2vw;
+  font-size: 1.5vh;
 		
 	}
 	
 	
 .navigation {
-	font-size: 24px;
+/* 	font-size: 3vh;
+	text-align: center;
+	padding: 10px 0px 0px 0px;;
+	border: none;
+	margin-bottom: 0px;
+	position: absolute;
+	top: 0;
+	left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%; */
+  	font-size: 4vh;
 	text-align: center;
 	padding: 10px 0px 0px 0px;;
 	border: none;
@@ -64,7 +79,8 @@ a {
 }
 
 a:hover {
-	color: color(display-p3 0.926 0.56 0.252);
+  color: orange;
+/* 	color: color(display-p3 0.926 0.56 0.252); */
 }
 		
 li {
@@ -88,18 +104,22 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  left: 0;
-  width: 100%;
+/*   position: absolute; */
+/*   left: 0; */
+  
 }
 
 #results img {
   border-radius: 10%;
-  height: 200px;
-  width: 200px;
-  justify-content: space-between;
+   
+/*   width: 300px;  */
+  justify-content: space-evenly;
   padding: 7px 7px 7px 7px;
+  width: 90%;
+  max-width: 500px;
+  height: auto;
   
+
 }
 
 
@@ -110,12 +130,20 @@ li {
 }
 
 label {
-  font-size: 30px;
+  font-size: 2vh;
 }
 
 select {
 width: 10%;
-height: 30px;
-font-size: 20px;
+height: 4.5vh;
+  width: 10vw;
+font-size: 1.5vh;
 background-color: greenyellow;
 }
+
+ 
+ .image{
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}  

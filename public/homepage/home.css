@@ -1,9 +1,10 @@
-+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
 	font-family: 'roboto', sans-serif;
 	width: auto; 
 	margin: 0 auto;
+  min-width: min-content;
 }
 
 
@@ -16,15 +17,19 @@ header .banner {
 	background-size: contain;
  	text-align: center; 
 	text-shadow: 3px 3px color(display-p3 0.2 0.2 0.2);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .banner {
-  	 margin-left: calc(50% - 50vw);  
-	width: 100vw; height: 37.5vmin;
-	min-height: 8em; 
+   	 margin-left: calc(50% - 50vw);   
+   width: 60vw; height: 37.5vmin;
+	min-height: 8em;   
 	background: linear-gradient(#000, transparent, #000), 
 		var(--img) 50%/ cover;
-	background-attachment: fixed;
+ 	background-attachment: fixed; 
 	background-blend-mode: multiply;
 }
 
@@ -41,11 +46,12 @@ text-align: center;
 
 h2 {
 	text-align: center;
+  color: white;
 }
 
 .section-one {
 	background-color: white;
-	color: black;
+	color: white;
 	text-align: center;
 	padding: 30px 200px 30px 200px;
 	font-size: 20px;
@@ -66,20 +72,19 @@ h2 {
 }
 
 .organize-title {
-	color: color(display-p3 0.2 0.2 0.2);
+	color: black;
 }
 
 .organize-p {
 	text-align: center;
 	padding: auto;
   margin: auto;
-	
+  color: black;
 }
 
 p {
 	text-align: center;
 	color: color(display-p3 0.2 0.2 0.2);
-	
 }
 
 .about {
@@ -125,9 +130,11 @@ p {
 
 
 
-img {
-	width: 300px;
-	height: 250px;
+#img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .garden-strong {
@@ -137,7 +144,7 @@ img {
 	
 .navigation {
 	  font-family: Helvetica;
-/* 	  font-size: 6vw; */
+ 	  font-size: 4vh; 
 	  text-align: center;
 	  padding: 10px 0px 0px 0px;;
 	  border: none;
@@ -150,7 +157,7 @@ img {
 	
 	.navigation a {
 	  color: white;
-	  font-size: 3vw;
+	  font-size: 4vh;
 	  display: block;
 	margin-bottom: 100px;
 	text-decoration: none;
@@ -171,7 +178,8 @@ img {
 		
 	}
 a:hover {
-	color: color(display-p3 0.926 0.56 0.252);
+	color: orange;
+/* 	color: color(display-p3 0.926 0.56 0.252); */
 }
 	
 li {
@@ -187,6 +195,7 @@ li {
 	.myGrid div {
 	  height: 80px;
 	  border: none;
+    width: 1fr;
 	}
 	
 	.submit-button {
@@ -219,7 +228,7 @@ input {
 
 	
 	#row1col1 {
-	 height: 500px;
+	 height: 600px;
  	 background-color: green; /*color(display-p3 0.204 0.286 0.125);  */
 	 color: white;
 	 font-size: 20px;
@@ -232,21 +241,22 @@ input {
 	}
 	
 	#row1col2 {
-	  height: 500px;
+	  height: 600px;
 	  background-image: url("../images/tomatoes.jpg");
 	  background-repeat: no-repeat;
 	  background-size: cover;
+    
 	}
 	
 	#row2col1 {
-	  height: 500px;
+	  height: 600px;
 	  background-image: url("../images/carrots.jpg");
 	  background-repeat: no-repeat;
 	  background-size: cover;
 	}
 	
 	#row2col2 {
-	  height: 500px;
+	  height: 600px;
  	  background: green;/*color(display-p3 0.204 0.286 0.125); */
 	  color: white;
 	  font-size: 20px;
@@ -272,8 +282,8 @@ input {
 	}
 	
 	.row {
-		background-color: color(display-p3 0.2 0.2 0.2);
-		color: white;
+  	background-color: black;/*color(display-p3 0.2 0.2 0.2); 
+		color: white; */
 	}
 	
 
@@ -313,11 +323,13 @@ input {
 	
 	
 	.carousel {
- 	  max-width: 600px;
-    min-width: 600px;
+/*  	  max-width: 500px;
+    min-width: 500px; */
 	  position: relative;
 	  margin: auto;
-	  
+	  display: flex;
+    align-items: center;
+    justify-content: center;
 	}
 	
 	.carousel .carousel-item, 
@@ -331,11 +343,9 @@ input {
 	}
 	
 	.carousel .carousel-item img {
-	  width: 100%;
-/* 	  max-width: 600px; */
-	  height: 20vh;
-	  width: 20vw;
-	 
+	 width: 90%;
+  max-width: 400px;
+  height: auto;
 	}
 	
 	.carousel .carousel-actions {
@@ -351,21 +361,36 @@ input {
 	  border-radius: 50px;
 	  background-color: white;
 	  border: 0;
-	  font-size: 16px;
+	  font-size: 40px;
 	  font-weight: bold;
 	  cursor: pointer;
-	  width: 50px;
-	  height: 50px;
+	  width: 80px;
+	  height: 80px;
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+
 	}
 	
 	.carousel .carousel-actions button#carousel-button-prev {
-	  margin-left: .000001vw;
+	  margin-left: 0;
+    
 	}
 	
 	.carousel .carousel-actions button#carousel-button-next {
-	  margin-right: 20px;
+	  margin-right: 0;
 	}
-	
+
+  .carousel-actions button:active {
+    background-color: #lightgreen;
+  }
+
+  .carousel-actions button:hover {
+      background-color:green;
+      transition: 0.4s;
+  }
+
 	@keyframes fadeVisibility {
 	  0% {
 		opacity: 0;
@@ -377,6 +402,7 @@ input {
 	
 	.carousel-inner img {
 	  margin: auto;
+  
 	}
 	
 	.team-link {
@@ -384,15 +410,34 @@ input {
 	}
 
 .zone-pic {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+/*   display: block; */
+/*   margin-left: auto;
+  margin-right: auto  */
+/*   width: 40%; */
   padding-top: 20px;
+
+margin-left: 35%;
+   width: 90%;
+  max-width: 200px;
+  height: auto;
+    display: inline-flex; 
+  align-items: flex; 
+  justify-content: center;
+/*   margin-top: 20px; */
 }
 
 
+.search-pic {
+   padding-top: 20px;
 
+margin-left: 35%;
+   width: 250px;
+/*   max-width: 200px; */
+  height: 250px;
+    display: inline-flex; 
+  align-items: flex; 
+  justify-content: center;
+}
 
 
 .toggle-button {
@@ -406,41 +451,3 @@ input {
     height: 21px;
 }
 
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-}
-
-@media (max-width: 400px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .toggle-button {
-        display: flex;
-    }
-
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar-links ul li {
-        text-align: center;
-    }
-
-    .navbar-links ul li a {
-        padding: .5rem 1rem;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
